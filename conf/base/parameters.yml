@@ -1,0 +1,67 @@
+NOTES:
+  - "c,,"
+  - "d,,"
+  - "e,,"
+  - "f,,"
+  - "g,,"
+  - "a,,"
+  - "b,,"
+  - "c,"
+  - "d,"
+  - "e,"
+  - "f,"
+  - "g,"
+  - "a,"
+  - "b,"
+  - "c"
+  - "d"
+  - "e"
+  - "f"
+  - "g"
+  - "a"
+  - "b"
+  - "c'"
+  - "d'"
+  - "e'"
+  - "f'"
+  - "g'"
+  - "a'"
+  - "b'"
+  - "c''"
+  - "d''"
+  - "e''"
+  - "f''"
+  - "g''"
+  - "a''"
+  - "b''"
+
+RYTHMS:
+  - [4]
+  - [8, 8, ]
+  - [16, 16, 16, 16, ]
+  - [8, 16, 16, ]
+  - [16, 16, 8, ]
+
+MAX_NOTES_PER_PAGE: 25
+
+LILYPOND_HEADER: |
+  #(set! paper-alist
+  (cons '("my size" . (cons (* 21 cm) (* 2 cm))) paper-alist))
+
+  \paper {
+    #(set-paper-size "my size")
+    print-page-number=false
+  }
+              
+  \layout {
+    indent = 0\cm
+    \context {
+      \Score
+      \omit BarNumber
+    }
+  }
+  { \\fixed c'{\hide TimeSignature
+
+
+LILYPOND_END: |
+  }}

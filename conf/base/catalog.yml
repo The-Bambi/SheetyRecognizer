@@ -2,3 +2,11 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+#
+data_dict:
+  type: pickle.PickleDataset
+  filepath: data/output/melodies.pkl
+
+lilypond_files:
+  type: sheetyrecognizer.datasets.DictToLilypondFiles
+  filepath: data/output/lilypond
