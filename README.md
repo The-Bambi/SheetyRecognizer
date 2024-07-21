@@ -2,11 +2,7 @@
 
 ## Overview
 
-This is your new Kedro project, which was generated using `kedro 0.19.6`.
-
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
-
-The *ULTIMATE* goal of this pipeline is to build a machine learning pipeline able to convert visual sheet music into Lilypond.
+The *ULTIMATE* goal of this project is to build a machine learning pipeline able to convert visual sheet music into Lilypond.
 
 My previous attempts can be found in SheetMusicGenerator, which I am rewriting to a kedro framework.
 
@@ -17,6 +13,8 @@ Next steps:
 - reimplement "data science" pipeline (data split, model setup, model train, model evaluate...)
 - improve data generation (no music is ever random, right now it is)
 - improve the model (dictionary fix)
+
+This is your new Kedro project, which was generated using `kedro 0.19.6`.
 
 ## Rules and guidelines
 
