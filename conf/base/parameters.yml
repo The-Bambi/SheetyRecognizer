@@ -1,11 +1,4 @@
 NOTES:
-  - "c,,"
-  - "d,,"
-  - "e,,"
-  - "f,,"
-  - "g,,"
-  - "a,,"
-  - "b,,"
   - "c,"
   - "d,"
   - "e,"
@@ -42,7 +35,7 @@ RYTHMS:
   - [8, 16, 16, ]
   - [16, 16, 8, ]
 
-MAX_NOTES_PER_PAGE: 25
+MAX_NOTES_PER_PAGE: 100
 
 LILYPOND_HEADER: |
   #(set! paper-alist
@@ -60,8 +53,11 @@ LILYPOND_HEADER: |
       \omit BarNumber
     }
   }
-  { \\fixed c'{\hide TimeSignature
-
+  { \fixed c'{\hide TimeSignature
 
 LILYPOND_END: |
   }}
+
+TRAIN_TO_OTHERS_RATIO: 0.33
+VAL_TO_TEST_RATIO: 0.33
+RANDOM_STATE: 42
