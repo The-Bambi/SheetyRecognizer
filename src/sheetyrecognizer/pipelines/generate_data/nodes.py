@@ -1,7 +1,9 @@
 import random
 import pandas as pd
+import subprocess
 
 from typing import Tuple, List, Dict
+from sklearn.model_selection import train_test_split
 
 
 def make_pitches(scale:List, amnt:int) -> List[str]:
@@ -41,7 +43,7 @@ def make_data_file(melody, max_notes_per_page) -> Dict[int, str]:
         if i//max_notes_per_page not in data_dict:
             data_dict[i//max_notes_per_page] = []
         data_dict[i//max_notes_per_page].append(note)
-    return data_dict
+    return data_dict, list(data_dict.keys())
 
 def make_lilypond_files(data_dict, lilypond_header, lilypond_end):
     """
@@ -52,4 +54,11 @@ def make_lilypond_files(data_dict, lilypond_header, lilypond_end):
         final_dict[i] = f"{lilypond_header} {' '.join(music)} {lilypond_end}"
     return final_dict
 
+def make_sheet_music(file_names):
+    """
+    Takes list of files that were generated in previous nodes and converts them into PNGs.
+    """
+    for name in file_names:
+        file = str(name) + ".ly"
+        subprocess.run(['lilypond', '-fpng', '-o', output_file.stem, file]) #TODO give it output path, file name. To be decided if I want it as an arg or what.
 
